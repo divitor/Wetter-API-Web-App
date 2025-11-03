@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: cascadia code, monospace;
 }
+
 body {
     background-color: rgb(20, 17, 17);
     color: #ffffffce;
@@ -39,7 +40,7 @@ body {
     font-size: 1.2em;
     margin-top: 20px;
 }  
-.weather-container.search-weather-container input[type="button"] {
+.weather-container.search-weather-container input[type="submit"] {
     padding: 15px;
     border-radius: 8px;
     background-color: rgb(0, 0, 0);
@@ -53,7 +54,32 @@ body {
     margin-top: 20px;
 }
 
-.weather-container.search-weather-container input[type="button"]:hover {
+.weather-container.login-register-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+}
+.weather-container.login-register-container input[type="button"] {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0);
+    color: #ffffffce;
+    cursor: pointer;;
+    outline: none;
+    font-weight: 600;
+    border: none;
+    width: 160px;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.weather-container.search-weather-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.weather-container.login-register-container input[type="button"]:hover {
     background-color: #0056b3;
 }
 .weather-container.search-weather-container input[type="text"]::placeholder {
@@ -66,11 +92,15 @@ body {
     display: flex;
     gap: 10px;
     margin-top: 60px;
+    justify-content: center;
+    align-items: center;
 }
 
 .icon-weather-container i {
     font-size: 10em;
     color: #ffffffce;
+    justify-content: center;
+    align-items: center;
 }
 .weather-container.weather-tmp {
     display: flex;
@@ -82,7 +112,7 @@ body {
     padding: 15px;
     border: none;
     border-radius: 8px;
-    width: 150px;
+    width: 350px;
     font-size: 3em;
     background-color: rgb(20, 17, 17);
     color: #ffffffce;
@@ -98,7 +128,7 @@ body {
     padding: 15px;
     border: none;
     border-radius: 8px;
-    width: 500px;
+    width: 1000px;
     font-size: 1.5em;
     background-color: rgb(20, 17, 17);
     color: #ffffffce;
@@ -112,6 +142,7 @@ body {
     flex-direction: row ;
     gap: 20px;
     margin-top: 20px;
+    width: 100%;
 }
 .weather-container.weather-zusatz input[type="text"] {
     padding: 15px;
