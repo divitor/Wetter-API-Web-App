@@ -1,7 +1,14 @@
 <?php
+
+$weather_data = "";
+$weather_celcius   = "";
+$weather_description = "";
+$weather_humidity = "";
+$weather_wind_speed = "";
+
 if (isset($_POST['submit'])) {
     if (empty($_POST['city'])) {
-        echo "<p>Bitte geben Sie einen Stadtnamen ein.</p>";
+        echo "<script>alert('Bitte geben Sie einen Stadtnamen ein.');</script>";
     } else {
         $city = $_POST['city'];
         $apiKey = "0ab81cf6fadc0728247c7904050b3b9f";
@@ -12,7 +19,7 @@ if (isset($_POST['submit'])) {
         $weather_celcius = round($weather_celcius, 2);
         $weather_description = $weather_data['weather'][0]['description'];
         $weather_humidity = $weather_data['main']['humidity'];
-        $weather_wind_speed = $weather_data['wind']['speed']; 
+        $weather_wind_speed = $weather_data['wind']['speed'];
     }
 }
 ?>
@@ -50,41 +57,48 @@ if (isset($_POST['submit'])) {
                 </div>
             </form>
 
-
-            <div class="icon-weather-container">
-                 <i class="fa-solid fa-cloud-sun"></i>
+            <div class="weather-results-container">
+                <input type="text"
+                    name="weather-city"
+                    id="weather-city"
+                    value="<?php echo isset($weather_data['name']) ? htmlspecialchars($weather_data['name']) : ''; ?>"
+                    placeholder="Stadtname"
+                    readonly>
             </div>
             <div class="weather-container weather-tmp">
                 <input type="text"
                     name="weather-tmp" id="weather-tmp"
-                    value=<?php echo htmlspecialchars($weather_celcius . "°C"); ?>
-                    readonly>
+                    value="<?php echo htmlspecialchars($weather_celcius . "°C") ?>"
+                    placeholder="0°C"
+                    readonly;>
             </div>
             <div class="weather-container weather-description">
                 <input type="text"
                     name="weather-description"
                     id="weather-description"
-                    value=<?php echo htmlspecialchars($weather_description); ?>
+                    value="<?php echo htmlspecialchars($weather_description) ?>"
                     placeholder="Wetterbeschreibung"
                     readonly>
             </div>
             <div class="weather-container weather-zusatz">
                 <input type="text"
-                    name="weather-humidity" id="weather-humidity"
-                    value=<?php echo 'Luftfeuchtigkeit: '.$weather_humidity. '%'; ?>
-                    readonly
-                    >
+                    name="weather-humidity"
+                    id="weather-humidity"
+                    value="<?php echo 'Luftfeuchtigkeit: ' . htmlspecialchars($weather_humidity) . '%'; ?>"
+                    placveholder="0$"
+                    readonly>
                 <input type="text"
                     name="weather-wind-speed"
                     id="weather-wind-speed"
-                    value=<?php echo htmlspecialchars('Windgeschwindigkeit: '.$weather_wind_speed. "m/s"); ?>
-                    readonly
-                    >
+                    value="<?php echo 'Windgeschwindigkeit: ' . htmlspecialchars($weather_wind_speed) . " m/s"; ?>"
+                    placeholder="0 m/s"
+                    readonly>
             </div>
             </div>
             </div>
         </section>
-    </main>
-</body>
+    </main
 
-</html
+        </body>
+
+</html>
