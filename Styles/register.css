@@ -1,0 +1,96 @@
+* {
+  display: block;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cascadia Code", monospace;
+}
+body {
+  background-color: rgb(20, 17, 17);
+  color: #ffffffce;
+  font-size: 16px;
+}
+.registration-header {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.registration-form {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgb(30, 27, 27);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.form-group input[type="text"] {
+  margin-top: 10px;
+  width: 85%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}    
+
+.form-group input[type="password"] {
+  margin-top: 10px;
+  width: 85%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+.form-group label {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.form-group input[type="email"] {
+  margin-top: 10px;
+  width: 85%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+.form-group input[type="submit"] {
+  width: 85%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+  color: #ffffffce;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.form_fehler {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  width :100%;
+  justify-content: center;
+}
+
+.form_erfolg {
+  background-color: #4BB543;
+  color: white;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  width :100%;
+  justify-content: center;
+}
+ 
