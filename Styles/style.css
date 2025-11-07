@@ -175,3 +175,54 @@ body {
     text-align: center;
     margin-top: 30px;
 }
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-group input[type="button"] {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(0, 0, 0);
+    color: #ffffffce;
+    cursor: pointer;
+    outline: none;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 0 3px;
+}
+
+.button-group input[type="button"]:hover {
+    background-color: #0056b3;
+}
+.form_fehler {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+}
