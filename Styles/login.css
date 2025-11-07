@@ -10,16 +10,18 @@ body {
   color: #ffffffce;
   font-size: 16px;
 }
-.registration-header {
+
+.login-header {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.registration-header h1 {
+
+.login-header h1 {
   font-size: 2em;
   margin-bottom: 10px;
 }
-.registration-form {
+.login-form {
   width: 400px;
   margin: 50px auto;
   padding: 20px;
@@ -33,6 +35,7 @@ body {
   margin-bottom: 15px;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 .form-group input[type="text"] {
   margin-top: 10px;
@@ -55,7 +58,6 @@ body {
   font-size: 1.2em;
   margin-bottom: 10px;
 }
-
 .form-group input[type="email"] {
   margin-top: 10px;
   width: 85%;
@@ -64,22 +66,29 @@ body {
   border: 1px solid #ccc;
   font-size: 1em;
 }
+
+.form-group input[type='Email']::placeholder,
+.form-group input[type='password']::placeholder {
+  color: #999;
+  font-size: 0.9em;
+}
+
 .form-group input[type="submit"] {
   width: 85%;
   padding: 10px;
-  border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: rgb(0, 0, 0);
   color: #ffffffce;
-  font-size: 1.2em;
   cursor: pointer;
+  outline: none;
+  font-weight: 600;
+  border: none;
+  font-size: 1.2em;
   margin-top: 20px;
 }
-
 .form-group input[type="submit"]:hover {
   background-color: #0056b3;
 }
-
 .form_fehler {
   background-color: #ff4d4d;
   color: white;
@@ -90,16 +99,30 @@ body {
   width: 100%;
   justify-content: center;
 }
+.form_fehler div {
+  text-align: center;
+  align-items: center;
+}
 
-.form_erfolg {
-  background-color: #4bb543;
+.form-success {
+  background-color: #4CAF50;
   color: white;
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
   text-align: center;
-  width: 100%;
-  justify-content: center;
 }
-
-
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+#register_link {
+  color: #00aaff;
+  text-decoration: none;
+}
+#register_link:hover {
+  text-decoration: underline;
+}

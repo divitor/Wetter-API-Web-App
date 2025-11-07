@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['user_id'])) {
+    header("Location: weatherapp.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,7 +55,7 @@
 
         $sql = "SELECT * FROM users WHERE email = '$email'";
         require_once 'database.php';
-        $result = mysqli_query($conn,$sql);
+        $result = mysqli_query($conn, $sql);
         $rowCount = mysqli_num_rows($result);
         if ($rowCount > 0) {
             array_push($erros, "E-Mail-Adresse ist bereits registriert");
@@ -70,6 +77,7 @@
                 mysqli_stmt_execute($stmt);
                 echo "<div class='form_erfolg'>
                 <div>Registrierung erfolgreich!</div>
+                <div><a href='login.php'>Hier anmelden</a></div>
                 </div>";
             } else {
                 die("SQL Fehler");
