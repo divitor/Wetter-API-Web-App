@@ -1,6 +1,7 @@
 <?php
+// Session starten und prüfen, ob der Benutzer bereits eingeloggt ist
 session_start();
-if (isset($_SESSION['user_id'])) {
+if (isset($_SESSION['user_id'])) { // Wenn ja, weiterleiten zur Hauptseite
     header("Location: weatherapp.php");
     exit();
 }
@@ -22,22 +23,24 @@ if (isset($_SESSION['user_id'])) {
     </div>
     <div class='cotainer'>
         <?php
-        if (isset($_POST['submit'])) {
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+        // Login-Formular verarbeiten
+        if (isset($_POST['submit'])) { //Wenn das Formular abgeschickt wurde
+            $email = $_POST['email'];  //E-Mail aus dem Formular
+            $password = $_POST['password']; //Passwort aus dem Formular
 
-            require_once 'database.php';
+            require_once 'database.php'; //Datenbankverbindung einbinden
 
-            $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-            $stmt->bind_param("s", $email);
-            $stmt->execute();
-            $result = $stmt->get_result();
-            $user = $result->fetch_assoc();
+            $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?"); //SQL-Abfrage vorbereiten
+            $stmt->bind_param("s", $email); //Parameter binden
+            $stmt->execute(); //Abfrage ausführen
+            $result = $stmt->get_result(); //Ergebnis holen
+            $user = $result->fetch_assoc(); //Benutzerdaten als assoziatives Array holen
 
+            //Überprüfen, ob der Benutzer existiert und das Passwort korrekt ist
             if ($user) {
                 if (password_verify($password, $user['password'])) {
                     session_start();
-                    $_SESSION['user_id'] = $user['id'];
+                    $_SESSION['user_id'] = $user['id']; 
                     $_SESSION['username'] = $user['username'];
                     header("Location: weatherapp.php");
                     exit();

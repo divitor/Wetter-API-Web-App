@@ -15,8 +15,8 @@
     </div>
     <div class=main-content>
         <div class="button-group">
-            <input type="button" name="anmeldung" id="anmelde_btn" value="Anmelden" onclick="location.href='login.php'">
-            <input type="button" name="register" id="register_btn" value="Registrieren" onclick="location.href='register.php'">
+            <input type="button" name="anmeldung" id="anmelde_btn" value="Anmelden" onclick="location.href='login.php'"> <!-- Button zur Anmeldeseite -->
+            <input type="button" name="register" id="register_btn" value="Registrieren" onclick="location.href='register.php'"> <!-- Button zur Registrierungsseite -->
         </div>
 </body>
 
