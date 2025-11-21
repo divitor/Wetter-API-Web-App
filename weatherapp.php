@@ -55,7 +55,7 @@ if (isset($_POST['add_favorite'])) {
             $stmt->bind_param("si", $favorite_city, $user_id);
             $stmt->execute();
 
-            if ($stmt->affected_rows > 0) { 
+            if ($stmt->affected_rows > 0) {
                 $message = "Lieblingsstadt (" . htmlspecialchars($favorite_city) . ") erfolgreich gespeichert!";
             } else {
                 $message = "Hinweis: Stadt war bereits als Favorit gespeichert.";
@@ -130,7 +130,7 @@ switch ($weather_condition) {
             <form method="post">
                 <div class='weather-container favorite-city'>
                     <h3>Lieblingsstadt einspeichern?</h3>
-                    <input type="text" 
+                    <input type="text"
                         name="fav_city"
                         id="fav_city"
                         placeholder="Geben sie Ihre Lieblingsstadt ein"
@@ -195,7 +195,7 @@ switch ($weather_condition) {
                 <input type="button" name="logout" id="logout_btn" value="Abmelden" onclick="location.href='logout.php'"> <!-- Button zum Abmelden -->
             </div>
         </section>
-    </main
-        </body>
+    </main>
+</body>
 
 </html>

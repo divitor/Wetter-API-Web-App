@@ -80,7 +80,7 @@ if (isset($_SESSION['user_id'])) { // Wenn ja, weiterleiten zur Hauptseite
             <div class="form-group">
                 <input type="submit"
                     value="Login"
-                    name="submit"
+                    name="submit">
                     </div>
         </form>
     </div>
