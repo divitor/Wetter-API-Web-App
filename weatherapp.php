@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
     if (empty($_POST['city'])) {
         echo "<script>alert('Bitte geben Sie einen Stadtnamen ein.');</script>";
     } else {
-        $city = $_POST['city'];
+        $city = $_POST['city']; // Stadtname aus dem Formular
         $apiKey = "0ab81cf6fadc0728247c7904050b3b9f"; // Ihr OpenWeatherMap API-Schlüssel
         $apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=$city&appid=$apiKey"; // API-URL mit Stadtname und API-Schlüssel
         $api_data = file_get_contents($apiUrl); // API-Daten abrufen
